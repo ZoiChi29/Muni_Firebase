@@ -190,69 +190,6 @@ class _ProfileState extends State<Profile> {
         SizedBox(
           height: 10,
         ),
-        Center(
-            child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: 60,
-          decoration: BoxDecoration(
-            color: Colors.black26,
-            borderRadius: BorderRadius.all(Radius.circular(7)),
-          ),
-          child: Theme(
-              data: new ThemeData(
-                primaryColor: Colors.transparent,
-                primaryColorDark: Colors.transparent,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 08),
-                child: ListTile(
-                  title: Text(
-                    "FAQS",
-                    style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  trailing: Icon(
-                    LineAwesomeIcons.question_circle,
-                    color: Colors.white,
-                  ),
-                ),
-              )),
-        )),
-        SizedBox(
-          height: 10,
-        ),
-        Center(
-            child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: 60,
-          decoration: BoxDecoration(
-            color: Colors.black26,
-            borderRadius: BorderRadius.all(Radius.circular(7)),
-          ),
-          child: Theme(
-              data: new ThemeData(
-                primaryColor: Colors.transparent,
-                primaryColorDark: Colors.transparent,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 08),
-                child: ListTile(
-                  title: Text(
-                    "Help & Support",
-                    style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  trailing: Icon(
-                    LineAwesomeIcons.headset,
-                    color: Colors.white,
-                  ),
-                ),
-              )),
-        )),
         SizedBox(
           height: 10,
         ),
