@@ -40,7 +40,7 @@ class _ProfileState extends State<Profile> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(100)),
                     ),
-                    child: SvgPicture.asset("assets/shop.svg"),
+                    child: Icon(Icons.supervised_user_circle, size: 80.0),
                   ),
                 ),
               ),

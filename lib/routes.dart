@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resturent_book/App_Pages/dashboard.dart';
+import 'package:resturent_book/Dashboard_Pages/Property_Registration.dart';
 import 'package:resturent_book/User_Pages/Login.dart';
 import 'package:resturent_book/User_Pages/Register.dart';
 
@@ -13,13 +14,13 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case 'login':
       return MaterialPageRoute(builder: (context) => Login());
 
-     case 'dashboard':
+    case 'dashboard':
       return MaterialPageRoute(builder: (context) => Dashbaord());
 
-    /*case 'booking':
-      return MaterialPageRoute(builder: (context) => book(signuparg));
+    case 'Prop_Reg':
+      return MaterialPageRoute(builder: (context) => Prop_Reg());
 
-    case 'shop_manager':
+    /*case 'shop_manager':
       return MaterialPageRoute(builder: (context) => Shop_Getting_Started());
 
     case 'shop_login':

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:resturent_book/Dashboard_Pages/home.dart';
 import 'package:resturent_book/Dashboard_Pages/profile.dart';
 
 class Dashbaord extends StatefulWidget {
@@ -11,7 +12,10 @@ class Dashbaord extends StatefulWidget {
 class _DashbaordState extends State<Dashbaord> {
   int _selectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
+    //Prop_Reg(),
+    Home(),
     Profile(),
+    //Bookings_List()
   ];
   void _onItemTapped(int index) {
     setState(() {

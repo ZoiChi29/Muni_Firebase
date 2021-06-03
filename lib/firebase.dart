@@ -18,6 +18,40 @@ class Firebase_Helper {
     });
   }
 
+  void insert_users_property(
+      //String id,
+      String propname,
+      String proptype,
+      String _location,
+      String _area,
+      String year_of_con,
+      String _people,
+      String _floors,
+      String _livingrooms,
+      String _bedrooms,
+      String _bathrooms,
+      String _kitchens,
+      String _exteriors) {
+    databaseReference
+        .child("Properties")
+        .child(auth.currentUser.uid.toString())
+        .set({
+      //'property_id': id,
+      'property_name': propname,
+      'property_type': proptype,
+      'location': _location,
+      'area': _area,
+      'year_of_construction': year_of_con,
+      'number_of_people': _people,
+      'number_of_floors': _floors,
+      'number_of_livingrooms': _livingrooms,
+      'number_of_bedrooms': _bedrooms,
+      'number_of_bathrooms': _bathrooms,
+      'number_of_kitchens': _kitchens,
+      'number_of_exteriors': _exteriors,
+    });
+  }
+
   /*Future<void> create_booking(String res_id, String res_name, String date, String clock,
       String people, String time, String image) async {
     String key = databaseReference.child("bookings").push().key.toUpperCase();
@@ -25,13 +59,13 @@ class Firebase_Helper {
 
 
 
-    databaseReference
-        .child("shops")
-        .child(res_id)
+    /*databaseReference
+        .child("Properties")
+        .child(userid)
         .child("booked_dates")
         .child(date)
         .child(time)
-        .set('booked');
+        .set('booked');*/
 
     databaseReference
         .child("bookings")
@@ -52,11 +86,9 @@ class Firebase_Helper {
 
 
 
-  }
+  }*/
 
-
-
-  Future<String> check_status(String res_id, String res_name, String date, String clock,
+  /* Future<String> check_status(String res_id, String res_name, String date, String clock,
       String people, String time, String image) async {
     String result;
     await databaseReference.child('shops').child(res_id)
