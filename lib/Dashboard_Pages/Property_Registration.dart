@@ -31,7 +31,6 @@ class _Prop_RegState extends State<Prop_Reg> {
   final TextEditingController exteriors = TextEditingController();
 
   //the keys
-  final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final databaseReference = FirebaseDatabase.instance.reference();
 
@@ -57,6 +56,9 @@ class _Prop_RegState extends State<Prop_Reg> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: Text("Property Regestration"),
+        ),
         key: _scaffoldKey,
         body: Center(
           child: SingleChildScrollView(
@@ -511,6 +513,7 @@ class _Prop_RegState extends State<Prop_Reg> {
                                           Firebase_Helper helper =
                                               new Firebase_Helper();
                                           helper.insert_users_property(
+                                              //id.text,
                                               propName.text,
                                               propType.text,
                                               location.text,

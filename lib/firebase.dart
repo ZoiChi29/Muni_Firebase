@@ -33,8 +33,9 @@ class Firebase_Helper {
       String _kitchens,
       String _exteriors) {
     databaseReference
-        .child("Properties")
+        .child("users")
         .child(auth.currentUser.uid.toString())
+        .child("properties")
         .set({
       //'property_id': id,
       'property_name': propname,
@@ -49,6 +50,182 @@ class Firebase_Helper {
       'number_of_bathrooms': _bathrooms,
       'number_of_kitchens': _kitchens,
       'number_of_exteriors': _exteriors,
+      "user_id": auth.currentUser.uid
+    });
+  }
+
+  void Living_Room(
+    String q1,
+    String q2,
+    String q3,
+    String q4,
+    String q5,
+    String q6,
+    String q7,
+    String q8,
+    String q9,
+    String q10,
+    String q11,
+    String q12,
+  ) {
+    databaseReference
+        .child("users")
+        .child(auth.currentUser.uid.toString())
+        .child("properties")
+        .child("Sheets")
+        .child("Living_Room")
+        .set({
+      'Question 1': q1,
+      'Question 2': q2,
+      'Question 3': q3,
+      'Question 4': q4,
+      'Question 5': q5,
+      'Question 6': q6,
+      'Question 7': q7,
+      'Question 8': q8,
+      'Question 9': q9,
+      'Question 10': q10,
+      'Question 11': q11,
+      'Question 12': q12,
+      "user_id": auth.currentUser.uid,
+    });
+  }
+
+  void Bed_Room(
+    String q1,
+    String q2,
+    String q3,
+    String q4,
+    String q5,
+    String q6,
+    String q7,
+    String q8,
+    String q9,
+    String q10,
+    String q11,
+    String q12,
+  ) {
+    databaseReference
+        .child("users")
+        .child(auth.currentUser.uid.toString())
+        .child("properties")
+        .child("Sheets")
+        .child("Bedroom")
+        .set({
+      'Question 1': q1,
+      'Question 2': q2,
+      'Question 3': q3,
+      'Question 4': q4,
+      'Question 5': q5,
+      'Question 6': q6,
+      'Question 7': q7,
+      'Question 8': q8,
+      'Question 9': q9,
+      'Question 10': q10,
+      'Question 11': q11,
+      'Question 12': q12,
+      "user_id": auth.currentUser.uid,
+    });
+  }
+
+  void Bath_Room(
+    String q1,
+    String q2,
+    String q3,
+    String q4,
+    String q5,
+    String q6,
+    String q7,
+  ) {
+    databaseReference
+        .child("users")
+        .child(auth.currentUser.uid.toString())
+        .child("properties")
+        .child("Sheets")
+        .child("Bathroom")
+        .set({
+      'Question 1': q1,
+      'Question 2': q2,
+      'Question 3': q3,
+      'Question 4': q4,
+      'Question 5': q5,
+      'Question 6': q6,
+      'Question 7': q7,
+      "user_id": auth.currentUser.uid,
+    });
+  }
+
+  void Kitchen_(
+    String q1,
+    String q2,
+    String q3,
+    String q4,
+    String q5,
+    String q6,
+    String q7,
+    String q8,
+    String q9,
+    String q10,
+    String q11,
+    String q12,
+  ) {
+    databaseReference
+        .child("users")
+        .child(auth.currentUser.uid.toString())
+        .child("properties")
+        .child("Sheets")
+        .child("Kitchen")
+        .set({
+      'Question 1': q1,
+      'Question 2': q2,
+      'Question 3': q3,
+      'Question 4': q4,
+      'Question 5': q5,
+      'Question 6': q6,
+      'Question 7': q7,
+      'Question 8': q8,
+      'Question 9': q9,
+      'Question 10': q10,
+      'Question 11': q11,
+      'Question 12': q12,
+      "user_id": auth.currentUser.uid,
+    });
+  }
+
+  void Exterior_(
+    String q1,
+    String q2,
+    String q3,
+    String q4,
+    String q5,
+    String q6,
+    String q7,
+    String q8,
+    String q9,
+    String q10,
+    String q11,
+
+  ) {
+    databaseReference
+        .child("users")
+        .child(auth.currentUser.uid.toString())
+        .child("properties")
+        .child("Sheets")
+        .child("Exterior")
+        .set({
+      'Question 1': q1,
+      'Question 2': q2,
+      'Question 3': q3,
+      'Question 4': q4,
+      'Question 5': q5,
+      'Question 6': q6,
+      'Question 7': q7,
+      'Question 8': q8,
+      'Question 9': q9,
+      'Question 10': q10,
+      'Question 11': q11,
+
+      "user_id": auth.currentUser.uid,
     });
   }
 

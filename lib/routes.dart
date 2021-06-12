@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:resturent_book/App_Pages/dashboard.dart';
+import 'package:resturent_book/Dashboard_Pages/Generate_Sheet.dart';
 import 'package:resturent_book/Dashboard_Pages/Property_Registration.dart';
+import 'package:resturent_book/Dashboard_Pages/show_properties.dart';
+import 'package:resturent_book/Sheets_Pages/Bathroom.dart';
+import 'package:resturent_book/Sheets_Pages/BedRoom.dart';
+import 'package:resturent_book/Sheets_Pages/Exterior.dart';
+import 'package:resturent_book/Sheets_Pages/Kitchen.dart';
+import 'package:resturent_book/Sheets_Pages/Living_Room.dart';
 import 'package:resturent_book/User_Pages/Login.dart';
 import 'package:resturent_book/User_Pages/Register.dart';
 
@@ -20,16 +27,28 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case 'Prop_Reg':
       return MaterialPageRoute(builder: (context) => Prop_Reg());
 
-    /*case 'shop_manager':
-      return MaterialPageRoute(builder: (context) => Shop_Getting_Started());
+    case 'ShowProp':
+      return MaterialPageRoute(builder: (context) => ShowProp());
 
-    case 'shop_login':
-      return MaterialPageRoute(builder: (context) => Login_Shop());
+    case 'Sheets':
+      return MaterialPageRoute(builder: (context) => GenSheet());
 
-    case 'shop_signup':
-      return MaterialPageRoute(builder: (context) => SignUp_Shop());
+    case 'LivingRoom':
+      return MaterialPageRoute(builder: (context) => livingRoom());
 
-    case 'shop_bookings':
+    case 'Bedroom':
+      return MaterialPageRoute(builder: (context) => BedRoom());
+
+    case 'Bathroom':
+      return MaterialPageRoute(builder: (context) => Bathroom());
+
+    case 'Kitchen':
+      return MaterialPageRoute(builder: (context) => Kitchen());
+
+    case 'Exterior':
+      return MaterialPageRoute(builder: (context) => Exterior());
+
+    /*case 'shop_bookings':
       return MaterialPageRoute(builder: (context) => Shop_Bookings_List());
 
     case 'shop_inforamtion':

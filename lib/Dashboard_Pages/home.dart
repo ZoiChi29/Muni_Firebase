@@ -48,6 +48,27 @@ class _HomeState extends State<Home> {
                                             GoogleFonts.poppins(fontSize: 14)),
                                   ),
                                 ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Container(
+                                  height: 50,
+                                  width: 270,
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                        side: BorderSide(color: Colors.white)),
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, "ShowProp");
+                                    },
+                                    color: Colors.white,
+                                    textColor: Colors.black87,
+                                    child: Text("View Properties",
+                                        style:
+                                            GoogleFonts.poppins(fontSize: 14)),
+                                  ),
+                                ),
                               ],
                             )),
                           ),

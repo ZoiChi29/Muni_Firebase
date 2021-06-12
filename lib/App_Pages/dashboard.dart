@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:resturent_book/Dashboard_Pages/Generate_Sheet.dart';
+import 'package:resturent_book/Dashboard_Pages/Image_Picker.dart';
 import 'package:resturent_book/Dashboard_Pages/home.dart';
 import 'package:resturent_book/Dashboard_Pages/profile.dart';
 
@@ -14,8 +16,9 @@ class _DashbaordState extends State<Dashbaord> {
   List<Widget> _widgetOptions = <Widget>[
     //Prop_Reg(),
     Home(),
+    GenSheet(),
     Profile(),
-    //Bookings_List()
+    CaptureImage()
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -48,16 +51,16 @@ class _DashbaordState extends State<Dashbaord> {
                     label: 'Home',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(LineAwesomeIcons.search),
-                    label: 'Search',
+                    icon: Icon(LineAwesomeIcons.pager),
+                    label: 'Sheets',
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(LineAwesomeIcons.user),
                     label: 'Profile',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(LineAwesomeIcons.bookmark),
-                    label: 'Bookings',
+                    icon: Icon(LineAwesomeIcons.photo_video),
+                    label: 'Pictures',
                   ),
                 ],
                 currentIndex: _selectedIndex,
