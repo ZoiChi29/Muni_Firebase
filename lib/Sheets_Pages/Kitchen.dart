@@ -9,6 +9,7 @@ import 'package:resturent_book/firebase.dart';
 import '../firebase.dart';
 
 import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 class Kitchen extends StatefulWidget {
   @override
@@ -18,6 +19,8 @@ class Kitchen extends StatefulWidget {
 class _KitchenState extends State<Kitchen> {
   final _formkey = new GlobalKey<FormState>();
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final picker = ImagePicker();
+  File _image;
 
 /*//image fun
   File _image;
@@ -159,9 +162,8 @@ class _KitchenState extends State<Kitchen> {
                                                     IconButton(
                                                         icon:
                                                             Icon(Icons.camera),
-                                                        onPressed: () {
-                                                          //chooseImage();
-                                                        }),
+                                                        onPressed: () =>
+                                                            uploadImageKitchen()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -203,6 +205,11 @@ class _KitchenState extends State<Kitchen> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageKitchen()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -244,6 +251,11 @@ class _KitchenState extends State<Kitchen> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageKitchen()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -285,6 +297,11 @@ class _KitchenState extends State<Kitchen> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageKitchen()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -326,6 +343,11 @@ class _KitchenState extends State<Kitchen> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageKitchen()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -368,6 +390,11 @@ class _KitchenState extends State<Kitchen> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageKitchen()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -409,6 +436,11 @@ class _KitchenState extends State<Kitchen> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageKitchen()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -450,6 +482,11 @@ class _KitchenState extends State<Kitchen> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageKitchen()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -491,6 +528,11 @@ class _KitchenState extends State<Kitchen> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageKitchen()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -532,6 +574,11 @@ class _KitchenState extends State<Kitchen> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageKitchen()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -573,6 +620,11 @@ class _KitchenState extends State<Kitchen> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageKitchen()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -614,6 +666,11 @@ class _KitchenState extends State<Kitchen> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageKitchen()),
                                                     SizedBox(height: 20),
                                                     RaisedButton(
                                                         child: Text(

@@ -5,6 +5,7 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:resturent_book/Dashboard_Pages/Image_Picker.dart';
 import 'package:resturent_book/firebase.dart';
 import '../firebase.dart';
 import 'package:image_picker/image_picker.dart';
@@ -36,7 +37,8 @@ class _livingRoomState extends State<livingRoom> {
 //the keys
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final databaseReference = FirebaseDatabase.instance.reference();
-
+  File _imageFile;
+  final picker = ImagePicker();
 //entered values, might not need them
   String q1;
   String q2;
@@ -151,7 +153,9 @@ class _livingRoomState extends State<livingRoom> {
                                                     IconButton(
                                                         icon:
                                                             Icon(Icons.camera),
-                                                        onPressed: () {}
+                                                        onPressed: () =>
+                                                            uploadImageLiving(1)
+
                                                         //chooseImage();
                                                         ),
                                                     SizedBox(
@@ -195,6 +199,14 @@ class _livingRoomState extends State<livingRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageLiving(2)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -236,6 +248,14 @@ class _livingRoomState extends State<livingRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageLiving(3)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -277,6 +297,14 @@ class _livingRoomState extends State<livingRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageLiving(4)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -318,6 +346,14 @@ class _livingRoomState extends State<livingRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageLiving(5)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -359,6 +395,14 @@ class _livingRoomState extends State<livingRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageLiving(6)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -400,6 +444,14 @@ class _livingRoomState extends State<livingRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageLiving(7)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -441,6 +493,14 @@ class _livingRoomState extends State<livingRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageLiving(8)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -482,6 +542,14 @@ class _livingRoomState extends State<livingRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageLiving(9)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -523,6 +591,14 @@ class _livingRoomState extends State<livingRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageLiving(10)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -564,6 +640,14 @@ class _livingRoomState extends State<livingRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageLiving(11)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -605,6 +689,14 @@ class _livingRoomState extends State<livingRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageLiving(12)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(height: 20),
                                                     RaisedButton(
                                                         child: Text(

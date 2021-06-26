@@ -2,12 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resturent_book/firebase.dart';
-
 import '../firebase.dart';
-
+import 'package:resturent_book/firebase.dart';
+import 'package:flutter/widgets.dart';
+import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 
 class BedRoom extends StatefulWidget {
@@ -18,15 +18,6 @@ class BedRoom extends StatefulWidget {
 class _BedRoomState extends State<BedRoom> {
   final _formkey = new GlobalKey<FormState>();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
-/*//image fun
-  File _image;
-  final picker = ImagePicker();
-
-  Future chooseImage() async {
-    PickedFile pickedImage = await picker.getImage(source: ImageSource.camera);
-    setState(() {});
-  }*/
 
 // TextField Controllers
   TextEditingController question1 = TextEditingController();
@@ -44,6 +35,8 @@ class _BedRoomState extends State<BedRoom> {
 //the keys
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final databaseReference = FirebaseDatabase.instance.reference();
+  File _imageFile;
+  final picker = ImagePicker();
 
 //entered values, might not need them
   String q1;
@@ -159,9 +152,8 @@ class _BedRoomState extends State<BedRoom> {
                                                     IconButton(
                                                         icon:
                                                             Icon(Icons.camera),
-                                                        onPressed: () {
-                                                          //chooseImage();
-                                                        }),
+                                                        onPressed: () =>
+                                                            uploadImageBed()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -203,6 +195,11 @@ class _BedRoomState extends State<BedRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBed()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -244,6 +241,11 @@ class _BedRoomState extends State<BedRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBed()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -285,6 +287,11 @@ class _BedRoomState extends State<BedRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBed()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -326,6 +333,11 @@ class _BedRoomState extends State<BedRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBed()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -367,6 +379,11 @@ class _BedRoomState extends State<BedRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBed()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -409,6 +426,11 @@ class _BedRoomState extends State<BedRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBed()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -450,6 +472,11 @@ class _BedRoomState extends State<BedRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBed()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -491,6 +518,11 @@ class _BedRoomState extends State<BedRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBed()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -532,6 +564,11 @@ class _BedRoomState extends State<BedRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBed()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -573,6 +610,11 @@ class _BedRoomState extends State<BedRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBed()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -614,6 +656,11 @@ class _BedRoomState extends State<BedRoom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBed()),
                                                     SizedBox(height: 10),
                                                     RaisedButton(
                                                         child: Text(

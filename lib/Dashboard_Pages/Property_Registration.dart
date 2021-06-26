@@ -526,6 +526,8 @@ class _Prop_RegState extends State<Prop_Reg> {
                                               bathrooms.text,
                                               kitchens.text,
                                               exteriors.text);
+                                          Navigator.pushNamed(
+                                              context, "dashboard");
                                           /*_responsehandle(
                                                 user,
                                                 message(

@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:resturent_book/firebase.dart';
 
 import '../firebase.dart';
-
+import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 
 class Bathroom extends StatefulWidget {
@@ -18,6 +18,8 @@ class Bathroom extends StatefulWidget {
 class _BathroomState extends State<Bathroom> {
   final _formkey = new GlobalKey<FormState>();
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  File _image;
+  final picker = ImagePicker();
 
 /*//image fun
   File _image;
@@ -144,9 +146,8 @@ class _BathroomState extends State<Bathroom> {
                                                     IconButton(
                                                         icon:
                                                             Icon(Icons.camera),
-                                                        onPressed: () {
-                                                          //chooseImage();
-                                                        }),
+                                                        onPressed: () =>
+                                                            uploadImageBathroom()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -188,6 +189,11 @@ class _BathroomState extends State<Bathroom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBathroom()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -230,6 +236,11 @@ class _BathroomState extends State<Bathroom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBathroom()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -271,6 +282,11 @@ class _BathroomState extends State<Bathroom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBathroom()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -312,6 +328,11 @@ class _BathroomState extends State<Bathroom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBathroom()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -353,6 +374,11 @@ class _BathroomState extends State<Bathroom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBathroom()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -394,6 +420,11 @@ class _BathroomState extends State<Bathroom> {
                                                               border:
                                                                   UnderlineInputBorder()),
                                                     ),
+                                                    IconButton(
+                                                        icon:
+                                                            Icon(Icons.camera),
+                                                        onPressed: () =>
+                                                            uploadImageBathroom()),
                                                     SizedBox(
                                                       height: 20,
                                                     ),

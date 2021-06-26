@@ -1,5 +1,12 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'dart:io';
+import 'package:firebase_storage/firebase_storage.dart';
+
+import 'package:permission_handler/permission_handler.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Firebase_Helper {
   final databaseReference = FirebaseDatabase.instance.reference();
@@ -204,7 +211,6 @@ class Firebase_Helper {
     String q9,
     String q10,
     String q11,
-
   ) {
     databaseReference
         .child("users")
@@ -224,7 +230,6 @@ class Firebase_Helper {
       'Question 9': q9,
       'Question 10': q10,
       'Question 11': q11,
-
       "user_id": auth.currentUser.uid,
     });
   }
@@ -320,4 +325,234 @@ class Firebase_Helper {
       'limit': limit
     });
   }*/
+}
+
+uploadImageLiving(int counter) async {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  String imageUrl;
+  final _storage = FirebaseStorage.instance;
+  final _picker = ImagePicker();
+  PickedFile image;
+
+  //check for permissions
+  await Permission.photos.request();
+
+  var permissionStatus = await Permission.photos.status;
+
+  if (permissionStatus.isGranted) {
+    //Select the Image
+
+    image = await _picker.getImage(source: ImageSource.camera);
+
+    var file = File(image.path);
+
+    if (image != null) {
+      //Upload the pic
+
+      var snapshot = await _storage
+          .ref()
+          .child(auth.currentUser.uid.toString())
+          .child('LivingRoom Pictures/Picture # ' +
+              counter.toString() +
+              DateTime.now().toString())
+          .putFile(file);
+
+      /*var downloadUrl = await snapshot.ref.getDownloadURL();
+      setState(() {
+        imageUrl = downloadUrl;
+      });
+    } else {
+      print("No Path Recived");
+    }
+  } else {
+    print("Grant Permission First");
+  }*/
+
+    }
+  }
+}
+
+uploadImageBed() async {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  String imageUrl;
+  int counter;
+  final _storage = FirebaseStorage.instance;
+  final _picker = ImagePicker();
+  PickedFile image;
+
+  //check for permissions
+  await Permission.photos.request();
+
+  var permissionStatus = await Permission.photos.status;
+
+  if (permissionStatus.isGranted) {
+    //Select the Image
+
+    image = await _picker.getImage(source: ImageSource.camera);
+
+    var file = File(image.path);
+
+    if (image != null) {
+      //Upload the pic
+
+      var snapshot = await _storage
+          .ref()
+          .child(auth.currentUser.uid.toString())
+          .child('Bedroom Pictures/Picture # ' +
+              counter.toString() +
+              DateTime.now().toString())
+          .putFile(file);
+
+      /*var downloadUrl = await snapshot.ref.getDownloadURL();
+      setState(() {
+        imageUrl = downloadUrl;
+      });
+    } else {
+      print("No Path Recived");
+    }
+  } else {
+    print("Grant Permission First");
+  }*/
+    }
+  }
+}
+
+uploadImageBathroom() async {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  int counter;
+  String imageUrl;
+  final _storage = FirebaseStorage.instance;
+  final _picker = ImagePicker();
+  PickedFile image;
+
+  //check for permissions
+  await Permission.photos.request();
+
+  var permissionStatus = await Permission.photos.status;
+
+  if (permissionStatus.isGranted) {
+    //Select the Image
+
+    image = await _picker.getImage(source: ImageSource.camera);
+
+    var file = File(image.path);
+
+    if (image != null) {
+      //Upload the pic
+
+      var snapshot = await _storage
+          .ref()
+          .child(auth.currentUser.uid.toString())
+          .child('Bathroom Pictures/Picture # ' +
+              counter.toString() +
+              DateTime.now().toString())
+          .putFile(file);
+
+      /*var downloadUrl = await snapshot.ref.getDownloadURL();
+      setState(() {
+        imageUrl = downloadUrl;
+      });
+    } else {
+      print("No Path Recived");
+    }
+  } else {
+    print("Grant Permission First");
+  }*/
+
+    }
+  }
+}
+
+uploadImageKitchen() async {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  int counter;
+  String imageUrl;
+  final _storage = FirebaseStorage.instance;
+  final _picker = ImagePicker();
+  PickedFile image;
+
+  //check for permissions
+  await Permission.photos.request();
+
+  var permissionStatus = await Permission.photos.status;
+
+  if (permissionStatus.isGranted) {
+    //Select the Image
+
+    image = await _picker.getImage(source: ImageSource.camera);
+
+    var file = File(image.path);
+
+    if (image != null) {
+      //Upload the pic
+
+      var snapshot = await _storage
+          .ref()
+          .child(auth.currentUser.uid.toString())
+          .child('Kitchen Pictures/Picture # ' +
+              counter.toString() +
+              DateTime.now().toString())
+          .putFile(file);
+
+      /*var downloadUrl = await snapshot.ref.getDownloadURL();
+      setState(() {
+        imageUrl = downloadUrl;
+      });
+    } else {
+      print("No Path Recived");
+    }
+  } else {
+    print("Grant Permission First");
+  }*/
+
+    }
+  }
+}
+
+uploadImageExt() async {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  int counter;
+  String imageUrl;
+  final _storage = FirebaseStorage.instance;
+  final _picker = ImagePicker();
+  PickedFile image;
+
+  //check for permissions
+  await Permission.photos.request();
+
+  var permissionStatus = await Permission.photos.status;
+
+  if (permissionStatus.isGranted) {
+    //Select the Image
+
+    image = await _picker.getImage(source: ImageSource.camera);
+
+    var file = File(image.path);
+
+    if (image != null) {
+      //Upload the pic
+
+      var snapshot = await _storage
+          .ref()
+          .child(auth.currentUser.uid.toString())
+          .child('Exterior Pictures/Picture # ' +
+              counter.toString() +
+              DateTime.now().toString())
+          .putFile(file);
+
+      /*var downloadUrl = await snapshot.ref.getDownloadURL();
+      setState(() {
+        imageUrl = downloadUrl;
+      });
+    } else {
+      print("No Path Recived");
+    }
+  } else {
+    print("Grant Permission First");
+  }*/
+      counter++;
+    }
+  }
 }

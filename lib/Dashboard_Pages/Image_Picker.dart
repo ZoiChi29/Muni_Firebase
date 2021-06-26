@@ -42,6 +42,7 @@ class _CaptureImageState extends State<CaptureImage> {
   }
 
   uploadImage() async {
+    int counter;
     final _storage = FirebaseStorage.instance;
     final _picker = ImagePicker();
     PickedFile image;
@@ -61,8 +62,13 @@ class _CaptureImageState extends State<CaptureImage> {
       if (image != null) {
         //Upload the pic
 
-        var snapshot =
-            await _storage.ref().child('LivingRoom Pictures').putFile(file);
+        var snapshot = await _storage
+            .ref()
+            .child('LivingRoom Pictures/Picture' +
+                counter.toString() +
+                DateTime.now().toString())
+            .putFile(file);
+        counter++; //LOL Didnt work xD
 
         var downloadUrl = await snapshot.ref.getDownloadURL();
         setState(() {
