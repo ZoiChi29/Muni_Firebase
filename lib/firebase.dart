@@ -4,9 +4,67 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:image_picker/image_picker.dart';
+
+Future<void> userSignUp(String id, String mail, String fullname,
+    String emiratesid, String dob, String mobile, String phone) async {
+  CollectionReference users = FirebaseFirestore.instance.collection("Users");
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  String id = auth.currentUser.uid.toString();
+  users.add({
+    'userid': id,
+    'name': fullname,
+    'mail': mail,
+    'emirates_id': emiratesid,
+    'date of birth': dob,
+    'mobile': mobile,
+    'phone': phone,
+  });
+}
+
+Future<void> propSignUp(
+    String permitNo,
+    String propname,
+    String proptype,
+    String _location,
+    String _area,
+    String year_of_con,
+    String _people,
+    String _floors,
+    String _livingrooms,
+    String _bedrooms,
+    String _bathrooms,
+    String _kitchens,
+    String _exteriors) async {
+  CollectionReference prop = FirebaseFirestore.instance
+      .collection("Users")
+      .doc("CBkuXrVzXHs7hvu5jlFh")
+      .collection("Properties");
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  String id = auth.currentUser.uid.toString();
+  prop.add({
+    //'property_id': id,
+    'id': id,
+    'Permit Number': permitNo,
+    'property_name': propname,
+    'property_type': proptype,
+    'location': _location,
+    'area': _area,
+    'year_of_construction': year_of_con,
+    'number_of_people': _people,
+    'number_of_floors': _floors,
+    'number_of_livingrooms': _livingrooms,
+    'number_of_bedrooms': _bedrooms,
+    'number_of_bathrooms': _bathrooms,
+    'number_of_kitchens': _kitchens,
+    'number_of_exteriors': _exteriors,
+    "user_id": auth.currentUser.uid
+  });
+}
 
 class Firebase_Helper {
   final databaseReference = FirebaseDatabase.instance.reference();
@@ -26,7 +84,8 @@ class Firebase_Helper {
   }
 
   void insert_users_property(
-      //String id,
+      //String user,
+      String permitNo,
       String propname,
       String proptype,
       String _location,
@@ -45,6 +104,8 @@ class Firebase_Helper {
         .child("properties")
         .set({
       //'property_id': id,
+      //'id': user,
+      'Permit Number': permitNo,
       'property_name': propname,
       'property_type': proptype,
       'location': _location,

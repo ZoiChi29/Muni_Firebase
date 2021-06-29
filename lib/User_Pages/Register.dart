@@ -330,9 +330,7 @@ class RegisterState extends State<Register> {
                                                   _passwordController.text,
                                             ))
                                                 .user;
-                                            Firebase_Helper helper =
-                                                new Firebase_Helper();
-                                            helper.insert_user_info(
+                                            userSignUp(
                                               user.uid,
                                               user.email,
                                               _fullnameController.text,

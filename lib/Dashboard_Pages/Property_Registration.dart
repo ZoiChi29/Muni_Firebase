@@ -17,6 +17,7 @@ class _Prop_RegState extends State<Prop_Reg> {
   final formkey = new GlobalKey<FormState>();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   // TextField Controllers
+  final TextEditingController permitNo = TextEditingController();
   final TextEditingController propName = TextEditingController();
   final TextEditingController propType = TextEditingController();
   final TextEditingController location = TextEditingController();
@@ -47,6 +48,7 @@ class _Prop_RegState extends State<Prop_Reg> {
   String _bathrooms;
   String _kitchens;
   String _exteriors;
+  String _permitNo;
 
   @override
   initState() {
@@ -242,6 +244,40 @@ class _Prop_RegState extends State<Prop_Reg> {
                                     decoration: new InputDecoration(
                                         contentPadding: EdgeInsets.all(0.0),
                                         labelText: "Year of Construction",
+                                        labelStyle: GoogleFonts.poppins(
+                                          // fontFamily: "OpenSansBold",
+                                          color: Colors.white,
+                                        ),
+                                        enabledBorder: UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.grey),
+                                          //  when the TextFormField in unfocused
+                                        ),
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.green),
+                                          //  when the TextFormField in focused
+                                        ),
+                                        border: UnderlineInputBorder()),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  TextFormField(
+                                    controller: permitNo,
+                                    validator: (value) {
+                                      if (value.isEmpty) {
+                                        return 'Please enter the property Permit Number';
+                                      }
+                                      return null;
+                                    },
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                    decoration: new InputDecoration(
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: "Permit Number",
                                         labelStyle: GoogleFonts.poppins(
                                           // fontFamily: "OpenSansBold",
                                           color: Colors.white,
@@ -510,10 +546,9 @@ class _Prop_RegState extends State<Prop_Reg> {
                                               BorderSide(color: Colors.white)),
                                       onPressed: () async {
                                         {
-                                          Firebase_Helper helper =
-                                              new Firebase_Helper();
-                                          helper.insert_users_property(
+                                          propSignUp(
                                               //id.text,
+                                              permitNo.text,
                                               propName.text,
                                               propType.text,
                                               location.text,
@@ -528,6 +563,7 @@ class _Prop_RegState extends State<Prop_Reg> {
                                               exteriors.text);
                                           Navigator.pushNamed(
                                               context, "dashboard");
+
                                           /*_responsehandle(
                                                 user,
                                                 message(
