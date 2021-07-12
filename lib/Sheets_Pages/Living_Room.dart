@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resturent_book/Dashboard_Pages/Image_Picker.dart';
-import 'package:resturent_book/firebase.dart';
-import '../firebase.dart';
+import 'package:resturent_book/services/firebase.dart';
+import '../services/firebase.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:flutter/widgets.dart';
@@ -595,7 +595,8 @@ class _livingRoomState extends State<livingRoom> {
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageLiving(10)
+                                                            uploadImageLiving(
+                                                                10)
 
                                                         //chooseImage();
                                                         ),
@@ -644,7 +645,8 @@ class _livingRoomState extends State<livingRoom> {
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageLiving(11)
+                                                            uploadImageLiving(
+                                                                11)
 
                                                         //chooseImage();
                                                         ),
@@ -693,20 +695,36 @@ class _livingRoomState extends State<livingRoom> {
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageLiving(12)
+                                                            uploadImageLiving(
+                                                                12)
 
                                                         //chooseImage();
                                                         ),
                                                     SizedBox(height: 20),
                                                     RaisedButton(
-                                                        child: Text(
-                                                          "Submit Sheet",
-                                                          style: TextStyle(
-                                                              color:
-                                                                  Colors.white),
-                                                        ),
-                                                        color: Colors.blue,
-                                                        onPressed: () async {
+                                                      child: Text(
+                                                        "Submit Sheet",
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                      ),
+                                                      color: Colors.blue,
+                                                      onPressed: () {
+                                                        livsheet(
+                                                            question1.text,
+                                                            question2.text,
+                                                            question3.text,
+                                                            question4.text,
+                                                            question5.text,
+                                                            question6.text,
+                                                            question7.text,
+                                                            question8.text,
+                                                            question9.text,
+                                                            question10.text,
+                                                            question11.text,
+                                                            question12.text);
+                                                      },
+                                                      /*onPressed: () async {
                                                           {
                                                             Firebase_Helper
                                                                 helper =
@@ -729,7 +747,8 @@ class _livingRoomState extends State<livingRoom> {
                                                                 context,
                                                                 "dashboard");
                                                           }
-                                                        }),
+                                                        }*/
+                                                    ),
                                                   ])))))
                             ]))))));
   }

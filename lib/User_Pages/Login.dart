@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:resturent_book/models/user.dart';
+import 'package:resturent_book/services/auth_notifier.dart';
+import 'package:resturent_book/services/authntication.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -10,14 +14,35 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  Users _users = new Users();
+  Authntication _authntication = new Authntication();
+
   bool radio = false;
   final TextEditingController emailcont = TextEditingController();
   final TextEditingController passcont = TextEditingController();
-  final formkey = new GlobalKey<FormState>();
+  final GlobalKey<FormState> formkey = new GlobalKey<FormState>();
+
+  //INIT STATE
 
   @override
-  initState() {
+  void initState() {
+    AuthNotifier authNotifier =
+        Provider.of<AuthNotifier>(context, listen: false);
+
+    //INITILIZE CURRENT USER
+    _authntication.initilizeCurrentUser(authNotifier);
+    super.initState();
     SystemChrome.setEnabledSystemUIOverlays([]);
+  }
+
+  void _submitForm() {
+    if (!formkey.currentState.validate()) {
+      return;
+    }
+    formkey.currentState.save();
+    AuthNotifier authNotifier =
+        Provider.of<AuthNotifier>(context, listen: false);
+    _authntication.login(_users, authNotifier, context);
   }
 
   final FirebaseAuth _auth = FirebaseAuth.instance;

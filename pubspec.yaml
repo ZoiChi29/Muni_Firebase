@@ -33,7 +33,7 @@ dependencies:
   firebase_auth: ^0.20.0+1
   firebase_database: ^6.0.0
   line_awesome_flutter: ^1.0.1
-  flutter_rating_bar: ^3.2.0+1
+
   cloud_firestore:
   cached_network_image: ^2.5.0
   intl: ^0.16.1
@@ -44,6 +44,14 @@ dependencies:
   image_cropper: ^1.4.0
   fluttertoast: ^8.0.6
   permission_handler:
+  provider:
+  enum_to_string:
+  string_validator:
+  flutter_tags:
+  path:
+  curved_navigation_bar:
+  uuid:
+  shared_preferences:
 
 dev_dependencies:
   flutter_test:

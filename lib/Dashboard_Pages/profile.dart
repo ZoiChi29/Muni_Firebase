@@ -3,6 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -49,24 +50,24 @@ class _ProfileState extends State<Profile> {
               ),
               Container(
                 height: MediaQuery.of(context).size.height - 167,
-                child: new FirebaseAnimatedList(
-                    query: FirebaseDatabase.instance
-                        .reference()
-                        .child("users")
-                        .orderByChild('userid')
-                        .startAt(auth.currentUser.uid.toString())
-                        .endAt(auth.currentUser.uid.toString() + "\uf8ff"),
-                    padding: new EdgeInsets.only(bottom: 100),
-                    reverse: false,
-                    itemBuilder: (_, DataSnapshot snapshot,
-                        Animation<double> animation, int x) {
-                      return new Column(
-                        children: [
-                          profile(snapshot),
-                          SizedBox(
-                            height: 20,
-                          ),
-                        ],
+                child: StreamBuilder(
+                    stream: FirebaseFirestore.instance
+                        .collection("Users")
+                        .snapshots(),
+                    builder: (BuildContext context,
+                        AsyncSnapshot<QuerySnapshot> snapshot) {
+                      if (!snapshot.hasData) {
+                        return Text("Retriving Data");
+                      }
+                      return ListView(
+                        children: snapshot.data.docs.map((document) {
+                          return Column(
+                            children: <Widget>[
+                              Text(document['name']),
+                              Text(document['mail']),
+                            ],
+                          );
+                        }).toList(),
                       );
                     }),
               ),

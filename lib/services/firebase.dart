@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'dart:io';
@@ -8,13 +6,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:image_picker/image_picker.dart';
 
+//FIRESTORE DB METHODS..
+
 Future<void> userSignUp(String id, String mail, String fullname,
     String emiratesid, String dob, String mobile, String phone) async {
-  CollectionReference users = FirebaseFirestore.instance.collection("Users");
   final FirebaseAuth auth = FirebaseAuth.instance;
+  final CollectionReference users =
+      FirebaseFirestore.instance.collection("Users");
 
   String id = auth.currentUser.uid.toString();
-  users.add({
+  return await users.doc(auth.currentUser.uid.toString()).set({
     'userid': id,
     'name': fullname,
     'mail': mail,
@@ -39,16 +40,16 @@ Future<void> propSignUp(
     String _bathrooms,
     String _kitchens,
     String _exteriors) async {
+  final FirebaseAuth auth = FirebaseAuth.instance;
   CollectionReference prop = FirebaseFirestore.instance
       .collection("Users")
-      .doc("CBkuXrVzXHs7hvu5jlFh")
+      .doc(auth.currentUser.uid.toString())
       .collection("Properties");
-  final FirebaseAuth auth = FirebaseAuth.instance;
 
-  String id = auth.currentUser.uid.toString();
-  prop.add({
+  //String id = auth.currentUser.uid.toString();
+  return await prop.add({
     //'property_id': id,
-    'id': id,
+    //'id': id,
     'Permit Number': permitNo,
     'property_name': propname,
     'property_type': proptype,
@@ -65,6 +66,58 @@ Future<void> propSignUp(
     "user_id": auth.currentUser.uid
   });
 }
+
+//add the firestore functions here please
+
+Future<void> livsheet(
+  String q1,
+  String q2,
+  String q3,
+  String q4,
+  String q5,
+  String q6,
+  String q7,
+  String q8,
+  String q9,
+  String q10,
+  String q11,
+  String q12,
+) async {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  var doc_ref = await FirebaseFirestore.instance
+      .collection("Users")
+      .doc(auth.currentUser.uid.toString())
+      .collection("Properties")
+      .get();
+
+  DocumentReference documentReference = FirebaseFirestore.instance
+      .collection('Users')
+      .doc(auth.currentUser.uid.toString())
+      .collection("Properties")
+      .doc();
+  documentReference.set({
+    //'property_id': id,
+    'id': documentReference,
+    'Question 1': q1,
+    'Question 2': q2,
+    'Question 3': q3,
+    'Question 4': q4,
+    'Question 5': q5,
+    'Question 6': q6,
+    'Question 7': q7,
+    'Question 8': q8,
+    'Question 9': q9,
+    'Question 10': q10,
+    'Question 11': q11,
+    'Question 12': q12,
+    "user_id": auth.currentUser.uid
+  });
+}
+
+//TILL HERE.
+
+//NEXT IS REALTIME DB METHODS. //leave it please
 
 class Firebase_Helper {
   final databaseReference = FirebaseDatabase.instance.reference();

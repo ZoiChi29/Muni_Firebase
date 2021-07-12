@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:resturent_book/firebase.dart';
+import 'package:provider/provider.dart';
+import 'package:resturent_book/models/user.dart';
+import 'package:resturent_book/services/auth_notifier.dart';
+import 'package:resturent_book/services/authntication.dart';
+import 'package:resturent_book/services/firebase.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -12,7 +16,9 @@ class Register extends StatefulWidget {
 }
 
 class RegisterState extends State<Register> {
-  final formkey = new GlobalKey<FormState>();
+  Users _users = new Users();
+
+  final GlobalKey<FormState> formkey = new GlobalKey<FormState>();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   bool radio = false;
 
@@ -30,9 +36,29 @@ class RegisterState extends State<Register> {
   String _password;
   String _fullname;
 
+  Authntication _authntication = new Authntication();
+  //INIT STATE
+
   @override
-  initState() {
+  void initState() {
+    AuthNotifier authNotifier =
+        Provider.of<AuthNotifier>(context, listen: false);
+
+    //INITILIZE CURRENT USER
+    _authntication.initilizeCurrentUser(authNotifier);
+    super.initState();
     SystemChrome.setEnabledSystemUIOverlays([]);
+  }
+
+  void _submitForm() {
+    if (!formkey.currentState.validate()) {
+      return;
+    }
+    formkey.currentState.save();
+    AuthNotifier authNotifier =
+        Provider.of<AuthNotifier>(context, listen: false);
+    print("Success");
+    _authntication.signup(_users, authNotifier, context);
   }
 
   Widget build(BuildContext context) {
