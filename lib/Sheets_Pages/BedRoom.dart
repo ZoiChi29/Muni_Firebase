@@ -32,6 +32,12 @@ class _BedRoomState extends State<BedRoom> {
   TextEditingController question10 = TextEditingController();
   TextEditingController question11 = TextEditingController();
   TextEditingController question12 = TextEditingController();
+  final listofChoices = ["Yes", "No"];
+  String dropdownValue1 = "Yes";
+  String dropdownValue2 = "Yes";
+  String dropdownValue3 = "Yes";
+  String dropdownValue4 = "Yes";
+  String dropdownValue5 = "Yes";
 //the keys
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final databaseReference = FirebaseDatabase.instance.reference();
@@ -111,6 +117,52 @@ class _BedRoomState extends State<BedRoom> {
                                                     SizedBox(
                                                       height: 30,
                                                     ),
+                                                    /*Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask Owner to show you AC in the room",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
+                                                    ),*/
                                                     TextFormField(
                                                       controller: question1,
                                                       style: TextStyle(
@@ -153,7 +205,10 @@ class _BedRoomState extends State<BedRoom> {
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageBed()),
+                                                            uploadImageLiving(1)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -199,11 +254,14 @@ class _BedRoomState extends State<BedRoom> {
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageBed()),
+                                                            uploadImageLiving(2)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question3,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -240,16 +298,111 @@ class _BedRoomState extends State<BedRoom> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue1,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask Owner to show you AC grills",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue1 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageBed()),
+                                                            uploadImageLiving(3)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue2,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask Owner to show you AC controller",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue2 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
+                                                    ),
+                                                    /*TextFormField(
                                                       controller: question4,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -286,12 +439,15 @@ class _BedRoomState extends State<BedRoom> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
-                                                    ),
+                                                    ),*/
                                                     IconButton(
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageBed()),
+                                                            uploadImageLiving(4)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -337,11 +493,14 @@ class _BedRoomState extends State<BedRoom> {
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageBed()),
+                                                            uploadImageLiving(5)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question6,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -378,12 +537,61 @@ class _BedRoomState extends State<BedRoom> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue3,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask Owner to show you lighting fixtures",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue3 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageBed()),
+                                                            uploadImageLiving(6)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -400,11 +608,10 @@ class _BedRoomState extends State<BedRoom> {
                                                                   EdgeInsets
                                                                       .all(0.0),
                                                               labelText:
-                                                                  "Ask owner if they have information regarding the light fixtures wattage",
+                                                                  "Ask owner if they have information regarding the light fixtures wattage in the room",
                                                               labelStyle:
                                                                   GoogleFonts
                                                                       .poppins(
-                                                                fontSize: 13,
                                                                 //fontFamily: "OpenSansBold",
                                                                 color: Colors
                                                                     .white,
@@ -430,7 +637,10 @@ class _BedRoomState extends State<BedRoom> {
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageBed()),
+                                                            uploadImageLiving(7)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -476,7 +686,10 @@ class _BedRoomState extends State<BedRoom> {
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageBed()),
+                                                            uploadImageLiving(8)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -522,11 +735,14 @@ class _BedRoomState extends State<BedRoom> {
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageBed()),
+                                                            uploadImageLiving(9)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question10,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -563,16 +779,66 @@ class _BedRoomState extends State<BedRoom> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue4,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask owner to show you the windows in the room",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue4 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageBed()),
+                                                            uploadImageLiving(
+                                                                10)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question11,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -609,12 +875,62 @@ class _BedRoomState extends State<BedRoom> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue5,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask owner to show you interior and exterior envelope",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue5 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageBed()),
+                                                            uploadImageLiving(
+                                                                11)
+
+                                                        //chooseImage();
+                                                        ),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -660,22 +976,45 @@ class _BedRoomState extends State<BedRoom> {
                                                         icon:
                                                             Icon(Icons.camera),
                                                         onPressed: () =>
-                                                            uploadImageBed()),
-                                                    SizedBox(height: 10),
-                                                    RaisedButton(
-                                                        child: Text(
-                                                          "Submit Sheet",
-                                                          style: TextStyle(
-                                                              color:
-                                                                  Colors.white),
+                                                            uploadImageLiving(
+                                                                12)
+
+                                                        //chooseImage();
                                                         ),
-                                                        color: Colors.blue,
-                                                        onPressed: () async {
+                                                    SizedBox(height: 20),
+                                                    RaisedButton(
+                                                      child: Text(
+                                                        "Submit Sheet",
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                      ),
+                                                      color: Colors.blue,
+                                                      onPressed: () {
+                                                        Bedroom(
+                                                            question1.text,
+                                                            question2.text,
+                                                            dropdownValue1,
+                                                            dropdownValue2,
+                                                            question5.text,
+                                                            dropdownValue3,
+                                                            question7.text,
+                                                            question8.text,
+                                                            question9.text,
+                                                            dropdownValue4,
+                                                            dropdownValue5,
+                                                            question12.text);
+                                                        Navigator.pushNamed(
+                                                            context,
+                                                            "dashboard");
+                                                      },
+
+                                                      /*onPressed: () async {
                                                           {
                                                             Firebase_Helper
                                                                 helper =
                                                                 new Firebase_Helper();
-                                                            helper.Bed_Room(
+                                                            helper.Living_Room(
                                                                 question1.text,
                                                                 question2.text,
                                                                 question3.text,
@@ -693,7 +1032,8 @@ class _BedRoomState extends State<BedRoom> {
                                                                 context,
                                                                 "dashboard");
                                                           }
-                                                        }),
+                                                        }*/
+                                                    ),
                                                   ])))))
                             ]))))));
   }

@@ -61,6 +61,13 @@ class _KitchenState extends State<Kitchen> {
   String q10;
   String q11;
   String q12;
+  final listofChoices = ["Yes", "No"];
+  String dropdownValue1 = "Yes";
+  String dropdownValue2 = "Yes";
+  String dropdownValue3 = "Yes";
+  String dropdownValue4 = "Yes";
+  String dropdownValue5 = "Yes";
+  String dropdownValue6 = "Yes";
 
 //from here we are setting the online DB.
   @override
@@ -167,7 +174,7 @@ class _KitchenState extends State<Kitchen> {
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question2,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -204,6 +211,52 @@ class _KitchenState extends State<Kitchen> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue1,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask owner to show you AC label",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue1 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
@@ -213,7 +266,7 @@ class _KitchenState extends State<Kitchen> {
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question3,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -250,6 +303,52 @@ class _KitchenState extends State<Kitchen> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue2,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask Owner to show you AC grills",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue2 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
@@ -305,7 +404,7 @@ class _KitchenState extends State<Kitchen> {
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question5,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -342,6 +441,52 @@ class _KitchenState extends State<Kitchen> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue3,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask Owner to show you lighting fixtures",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue3 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
@@ -398,7 +543,7 @@ class _KitchenState extends State<Kitchen> {
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question7,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -435,6 +580,52 @@ class _KitchenState extends State<Kitchen> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue4,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask owner to show you windows and blinds",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue4 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
@@ -536,7 +727,7 @@ class _KitchenState extends State<Kitchen> {
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question10,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -573,6 +764,52 @@ class _KitchenState extends State<Kitchen> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue5,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask owner to show you the windows",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue5 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
@@ -582,7 +819,7 @@ class _KitchenState extends State<Kitchen> {
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question11,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -619,6 +856,52 @@ class _KitchenState extends State<Kitchen> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue6,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask owner to show you if the door going out is open",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue6 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
@@ -673,14 +956,32 @@ class _KitchenState extends State<Kitchen> {
                                                             uploadImageKitchen()),
                                                     SizedBox(height: 20),
                                                     RaisedButton(
-                                                        child: Text(
-                                                          "Submit Sheet",
-                                                          style: TextStyle(
-                                                              color:
-                                                                  Colors.white),
-                                                        ),
-                                                        color: Colors.blue,
-                                                        onPressed: () async {
+                                                      child: Text(
+                                                        "Submit Sheet",
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                      ),
+                                                      color: Colors.blue,
+                                                      onPressed: () {
+                                                        Kitchen_sheet_firestore(
+                                                            question1.text,
+                                                            dropdownValue1,
+                                                            dropdownValue2,
+                                                            question4.text,
+                                                            dropdownValue3,
+                                                            question6.text,
+                                                            dropdownValue4,
+                                                            question8.text,
+                                                            question9.text,
+                                                            dropdownValue5,
+                                                            dropdownValue6,
+                                                            question12.text);
+                                                        Navigator.pushNamed(
+                                                            context,
+                                                            "dashboard");
+                                                      },
+                                                      /*onPressed: () async {
                                                           {
                                                             Firebase_Helper
                                                                 helper =
@@ -703,7 +1004,8 @@ class _KitchenState extends State<Kitchen> {
                                                                 context,
                                                                 "dashboard");
                                                           }
-                                                        }),
+                                                        }*/
+                                                    ),
                                                   ])))))
                             ]))))));
   }

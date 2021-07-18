@@ -95,7 +95,9 @@ Future<void> livsheet(
       .collection('Users')
       .doc(auth.currentUser.uid.toString())
       .collection("Properties")
-      .doc();
+      .doc("Sheets_ID")
+      .collection("sheets")
+      .doc("Living Room Questions");
   documentReference.set({
     //'property_id': id,
     'id': documentReference,
@@ -111,6 +113,188 @@ Future<void> livsheet(
     'Question 10': q10,
     'Question 11': q11,
     'Question 12': q12,
+    "user_id": auth.currentUser.uid
+  });
+}
+
+Future<void> Bedroom(
+  String q1,
+  String q2,
+  String q3,
+  String q4,
+  String q5,
+  String q6,
+  String q7,
+  String q8,
+  String q9,
+  String q10,
+  String q11,
+  String q12,
+) async {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  var doc_ref = await FirebaseFirestore.instance
+      .collection("Users")
+      .doc(auth.currentUser.uid.toString())
+      .collection("Properties")
+      .get();
+
+  DocumentReference documentReference = FirebaseFirestore.instance
+      .collection('Users')
+      .doc(auth.currentUser.uid.toString())
+      .collection("Properties")
+      .doc("random_ID_lel")
+      .collection("sheets")
+      .doc("Bedroom Questions");
+  documentReference.set({
+    //'property_id': id,
+    'id': documentReference,
+    'Question 1': q1,
+    'Question 2': q2,
+    'Question 3': q3,
+    'Question 4': q4,
+    'Question 5': q5,
+    'Question 6': q6,
+    'Question 7': q7,
+    'Question 8': q8,
+    'Question 9': q9,
+    'Question 10': q10,
+    'Question 11': q11,
+    'Question 12': q12,
+    "user_id": auth.currentUser.uid
+  });
+}
+
+Future<void> Bathroom_sheet_firestore(
+  String q1,
+  String q2,
+  String q3,
+  String q4,
+  String q5,
+  String q6,
+  String q7,
+) async {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  var doc_ref = await FirebaseFirestore.instance
+      .collection("Users")
+      .doc(auth.currentUser.uid.toString())
+      .collection("Properties")
+      .get();
+
+  DocumentReference documentReference = FirebaseFirestore.instance
+      .collection('Users')
+      .doc(auth.currentUser.uid.toString())
+      .collection("Properties")
+      .doc("Sheets_ID")
+      .collection("sheets")
+      .doc("Bathroom Questions");
+  ;
+  documentReference.set({
+    //'property_id': id,
+    'id': documentReference,
+    'Question 1': q1,
+    'Question 2': q2,
+    'Question 3': q3,
+    'Question 4': q4,
+    'Question 5': q5,
+    'Question 6': q6,
+    'Question 7': q7,
+
+    "user_id": auth.currentUser.uid
+  });
+}
+
+Future<void> Kitchen_sheet_firestore(
+  String q1,
+  String q2,
+  String q3,
+  String q4,
+  String q5,
+  String q6,
+  String q7,
+  String q8,
+  String q9,
+  String q10,
+  String q11,
+  String q12,
+) async {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  var doc_ref = await FirebaseFirestore.instance
+      .collection("Users")
+      .doc(auth.currentUser.uid.toString())
+      .collection("Properties")
+      .get();
+
+  DocumentReference documentReference = FirebaseFirestore.instance
+      .collection('Users')
+      .doc(auth.currentUser.uid.toString())
+      .collection("Properties")
+      .doc("Sheets_ID")
+      .collection("sheets")
+      .doc("Kitchen Questions");
+  documentReference.set({
+    //'property_id': id,
+    'id': documentReference,
+    'Question 1': q1,
+    'Question 2': q2,
+    'Question 3': q3,
+    'Question 4': q4,
+    'Question 5': q5,
+    'Question 6': q6,
+    'Question 7': q7,
+    'Question 8': q8,
+    'Question 9': q9,
+    'Question 10': q10,
+    'Question 11': q11,
+    'Question 12': q12,
+    "user_id": auth.currentUser.uid
+  });
+}
+
+Future<void> Exterior_sheet_firestore(
+  String q1,
+  String q2,
+  String q3,
+  String q4,
+  String q5,
+  String q6,
+  String q7,
+  String q8,
+  String q9,
+  String q10,
+  String q11,
+) async {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  var doc_ref = await FirebaseFirestore.instance
+      .collection("Users")
+      .doc(auth.currentUser.uid.toString())
+      .collection("Properties")
+      .get();
+
+  DocumentReference documentReference = FirebaseFirestore.instance
+      .collection('Users')
+      .doc(auth.currentUser.uid.toString())
+      .collection("Properties")
+      .doc("Sheets_ID")
+      .collection("sheets")
+      .doc("Exterior Questions");
+  documentReference.set({
+    //'property_id': id,
+    'id': documentReference,
+    'Question 1': q1,
+    'Question 2': q2,
+    'Question 3': q3,
+    'Question 4': q4,
+    'Question 5': q5,
+    'Question 6': q6,
+    'Question 7': q7,
+    'Question 8': q8,
+    'Question 9': q9,
+    'Question 10': q10,
+    'Question 11': q11,
     "user_id": auth.currentUser.uid
   });
 }

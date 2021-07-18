@@ -20,6 +20,13 @@ class _ExteriorState extends State<Exterior> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   File _image;
   final picker = ImagePicker();
+  final listofChoices = ["Yes", "No"];
+  String dropdownValue1 = "Yes";
+  String dropdownValue2 = "Yes";
+  String dropdownValue3 = "Yes";
+  String dropdownValue4 = "Yes";
+  String dropdownValue5 = "Yes";
+  String dropdownValue6 = "Yes";
 
 /*//image fun
   File _image;
@@ -164,7 +171,7 @@ class _ExteriorState extends State<Exterior> {
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question2,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -201,6 +208,52 @@ class _ExteriorState extends State<Exterior> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue1,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask Owner to show you lighting fixtures",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue1 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
@@ -210,7 +263,7 @@ class _ExteriorState extends State<Exterior> {
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question3,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -247,6 +300,52 @@ class _ExteriorState extends State<Exterior> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue2,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask owner if they have information regarding the light fixtures wattage",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue2 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
@@ -303,7 +402,7 @@ class _ExteriorState extends State<Exterior> {
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question5,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -340,6 +439,52 @@ class _ExteriorState extends State<Exterior> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue3,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask owner if there are any sensors installed",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue3 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
@@ -349,7 +494,7 @@ class _ExteriorState extends State<Exterior> {
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question6,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -386,6 +531,52 @@ class _ExteriorState extends State<Exterior> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue4,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask owner to show you irrigation system if any",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue4 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
@@ -395,7 +586,7 @@ class _ExteriorState extends State<Exterior> {
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question7,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -432,6 +623,52 @@ class _ExteriorState extends State<Exterior> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue5,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask owner to show you water pumps if any",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue5 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
@@ -441,7 +678,7 @@ class _ExteriorState extends State<Exterior> {
                                                     SizedBox(
                                                       height: 20,
                                                     ),
-                                                    TextFormField(
+                                                    /*TextFormField(
                                                       controller: question8,
                                                       style: TextStyle(
                                                         color: Colors.white,
@@ -478,6 +715,52 @@ class _ExteriorState extends State<Exterior> {
                                                               ),
                                                               border:
                                                                   UnderlineInputBorder()),
+                                                    ),*/
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(20.0),
+                                                      child:
+                                                          DropdownButtonFormField(
+                                                        value: dropdownValue6,
+                                                        icon: Icon(Icons
+                                                            .arrow_downward),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              "Ask owner to show you exterior envelope",
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                        ),
+                                                        items: listofChoices
+                                                            .map(
+                                                                (String value) {
+                                                          return new DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child:
+                                                                new Text(value),
+                                                          );
+                                                        }).toList(),
+                                                        onChanged:
+                                                            (String newValue) {
+                                                          setState(() {
+                                                            dropdownValue6 =
+                                                                newValue;
+                                                          });
+                                                        },
+                                                        validator:
+                                                            (dynamic value) {
+                                                          if (value.isEmpty) {
+                                                            return 'Please Select an answer';
+                                                          }
+                                                          return null;
+                                                        },
+                                                      ),
                                                     ),
                                                     IconButton(
                                                         icon:
@@ -624,14 +907,32 @@ class _ExteriorState extends State<Exterior> {
                                                             uploadImageExt()),
                                                     SizedBox(height: 20),
                                                     RaisedButton(
-                                                        child: Text(
-                                                          "Submit Sheet",
-                                                          style: TextStyle(
-                                                              color:
-                                                                  Colors.white),
-                                                        ),
-                                                        color: Colors.blue,
-                                                        onPressed: () async {
+                                                      child: Text(
+                                                        "Submit Sheet",
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                      ),
+                                                      color: Colors.blue,
+                                                      onPressed: () {
+                                                        Exterior_sheet_firestore(
+                                                          question1.text,
+                                                          dropdownValue1,
+                                                          dropdownValue2,
+                                                          question4.text,
+                                                          dropdownValue3,
+                                                          dropdownValue4,
+                                                          dropdownValue5,
+                                                          dropdownValue6,
+                                                          question9.text,
+                                                          question10.text,
+                                                          question11.text,
+                                                        );
+                                                        Navigator.pushNamed(
+                                                            context,
+                                                            "dashboard");
+                                                      },
+                                                      /*onPressed: () async {
                                                           {
                                                             Firebase_Helper
                                                                 helper =
@@ -653,7 +954,8 @@ class _ExteriorState extends State<Exterior> {
                                                                 context,
                                                                 "dashboard");
                                                           }
-                                                        }),
+                                                        }*/
+                                                    ),
                                                   ])))))
                             ]))))));
   }
