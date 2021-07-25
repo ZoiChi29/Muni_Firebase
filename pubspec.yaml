@@ -52,6 +52,10 @@ dependencies:
   curved_navigation_bar:
   uuid:
   shared_preferences:
+  dio:
+  flutter_polyline_points:
+  google_maps_flutter:
+  geolocator:
 
 dev_dependencies:
   flutter_test:

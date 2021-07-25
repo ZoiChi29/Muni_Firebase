@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:resturent_book/Map.dart';
 import 'package:resturent_book/User_Pages/Login.dart';
 import 'package:resturent_book/routes.dart';
 import 'package:resturent_book/services/auth_notifier.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Login(),
+      home: map(),
       onGenerateRoute: generateRoute,
     );
   }

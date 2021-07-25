@@ -143,7 +143,7 @@ Future<void> Bedroom(
       .collection('Users')
       .doc(auth.currentUser.uid.toString())
       .collection("Properties")
-      .doc("random_ID_lel")
+      .doc("Sheets_ID")
       .collection("sheets")
       .doc("Bedroom Questions");
   documentReference.set({
