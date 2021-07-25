@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:resturent_book/Dashboard_Pages/Generate_Sheet.dart';
-import 'package:resturent_book/Dashboard_Pages/Image_Picker.dart';
-import 'package:resturent_book/Dashboard_Pages/home.dart';
-import 'package:resturent_book/Dashboard_Pages/profile.dart';
+import 'package:Muni_APP/Dashboard_Pages/Generate_Sheet.dart';
+import 'package:Muni_APP/Dashboard_Pages/Image_Picker.dart';
+import 'package:Muni_APP/Dashboard_Pages/home.dart';
+import 'package:Muni_APP/Dashboard_Pages/profile.dart';
 
 class Dashbaord extends StatefulWidget {
   @override

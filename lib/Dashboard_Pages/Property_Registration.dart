@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:resturent_book/services/firebase.dart';
+import 'package:Muni_APP/services/firebase.dart';
 
 import '../services/firebase.dart';
 

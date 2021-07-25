@@ -1,10 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:resturent_book/Map.dart';
-import 'package:resturent_book/User_Pages/Login.dart';
-import 'package:resturent_book/routes.dart';
-import 'package:resturent_book/services/auth_notifier.dart';
+import 'package:Muni_APP/Map.dart';
+import 'package:Muni_APP/User_Pages/Login.dart';
+import 'package:Muni_APP/routes.dart';
+import 'package:Muni_APP/services/auth_notifier.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

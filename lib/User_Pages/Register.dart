@@ -2,13 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:resturent_book/models/user.dart';
-import 'package:resturent_book/services/auth_notifier.dart';
-import 'package:resturent_book/services/authntication.dart';
-import 'package:resturent_book/services/firebase.dart';
+import 'package:Muni_APP/models/user.dart';
+import 'package:Muni_APP/services/auth_notifier.dart';
+import 'package:Muni_APP/services/authntication.dart';
+import 'package:Muni_APP/services/firebase.dart';
 
 class Register extends StatefulWidget {
   @override

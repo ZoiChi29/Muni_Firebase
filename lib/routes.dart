@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:resturent_book/App_Pages/dashboard.dart';
-import 'package:resturent_book/Dashboard_Pages/Generate_Sheet.dart';
-import 'package:resturent_book/Dashboard_Pages/Property_Registration.dart';
-import 'package:resturent_book/Dashboard_Pages/show_properties.dart';
-import 'package:resturent_book/Sheets_Pages/Bathroom.dart';
-import 'package:resturent_book/Sheets_Pages/BedRoom.dart';
-import 'package:resturent_book/Sheets_Pages/Exterior.dart';
-import 'package:resturent_book/Sheets_Pages/Kitchen.dart';
-import 'package:resturent_book/Sheets_Pages/Living_Room.dart';
-import 'package:resturent_book/User_Pages/Login.dart';
-import 'package:resturent_book/User_Pages/Register.dart';
+import 'package:Muni_APP/App_Pages/dashboard.dart';
+import 'package:Muni_APP/Dashboard_Pages/Generate_Sheet.dart';
+import 'package:Muni_APP/Dashboard_Pages/Property_Registration.dart';
+import 'package:Muni_APP/Dashboard_Pages/show_properties.dart';
+import 'package:Muni_APP/Sheets_Pages/Bathroom.dart';
+import 'package:Muni_APP/Sheets_Pages/BedRoom.dart';
+import 'package:Muni_APP/Sheets_Pages/Exterior.dart';
+import 'package:Muni_APP/Sheets_Pages/Kitchen.dart';
+import 'package:Muni_APP/Sheets_Pages/Living_Room.dart';
+import 'package:Muni_APP/User_Pages/Login.dart';
+import 'package:Muni_APP/User_Pages/Register.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   var signuparg = settings.arguments;

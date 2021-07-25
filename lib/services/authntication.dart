@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:path/path.dart';
-import 'package:resturent_book/models/user.dart';
-import 'package:resturent_book/services/auth_notifier.dart';
+
+import 'package:Muni_APP/models/user.dart';
+import 'package:Muni_APP/services/auth_notifier.dart';
 
 class Authntication {
   FirebaseAuth auth = FirebaseAuth.instance;

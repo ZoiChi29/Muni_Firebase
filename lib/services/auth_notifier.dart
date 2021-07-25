@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:resturent_book/models/user.dart';
+import 'package:Muni_APP/models/user.dart';
 
 class AuthNotifier extends ChangeNotifier {
   User _user;
